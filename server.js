@@ -5,7 +5,7 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4444;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,8 +21,9 @@ function populateTemplate(mappings) {
 
 const app = express();
 
-app.get("/", async (_, res) => {
-    const html = populateTemplate(process.env);
+app.get("/", async (req, res) => {
+    console.log(req.query);
+    const html = populateTemplate(req.query);
     res.send(html);
 });
 

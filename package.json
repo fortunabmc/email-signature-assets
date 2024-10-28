@@ -11,7 +11,11 @@
     "compress": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-tag-whitespace --minify-css true index.html > index.min.html",
     "count:min": "wc -m index.min.html",
     "count:src": "wc -m index.html",
+    "serve": "node server.js",
     "start": "npm run count:src && npm run compress && npm run count:min"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.7"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
