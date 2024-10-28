@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-tag-whitespace --minify-css true index.html > index.min.html"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,8 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0"
   }
 }
