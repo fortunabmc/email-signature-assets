@@ -2,19 +2,20 @@
   "name": "email-signature-assets",
   "version": "1.0.0",
   "description": "Using Github to host the images for Fortuna's signatures.",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-tag-whitespace --minify-css true index.html > index.min.html"
-  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+  "license": "MIT",
+  "author": "Kevin Hill <kevin.hill@fortunabmc.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "compress": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-tag-whitespace --minify-css true index.html > index.min.html",
+    "count:min": "wc -m index.min.html",
+    "count:src": "wc -m index.html",
+    "start": "npm run count:src && npm run compress && npm run count:min"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
     "html-minifier": "^4.0.0"
   }
 }
