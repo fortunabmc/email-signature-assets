@@ -8,19 +8,18 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "compress": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-tag-whitespace --minify-css true index.html > index.min.html",
-    "count:min": "wc -m index.min.html",
-    "count:src": "wc -m index.html",
-    "serve": "node server.js",
-    "start": "npm run count:src && npm run compress && npm run count:min"
+    "compress": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-tag-whitespace --minify-css true src/index.html > dist/index.min.html",
+    "count:min": "wc -m dist/index.min.html",
+    "count:src": "wc -m src/index.html",
+    "start": "node server.js",
+    "demo": "curl http://localhost:4444?Phone=123-456-7890&DisplayName=Kevin%20Hill&Title=IT%20Manager&UserPrincipalName=kevin.hill@fortunabmc.com",
+    "pack": "npm run count:src && npm run compress && npm run count:min"
   },
   "dependencies": {
     "nodemon": "^3.1.7"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "html-minifier": "^4.0.0"
-  },
-  "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
+    "express": "^4.21.1"
+  }
 }
