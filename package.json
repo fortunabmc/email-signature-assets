@@ -12,7 +12,7 @@
     "count:min": "wc -m dist/index.min.html",
     "count:src": "wc -m src/index.html",
     "start": "node server.js",
-    "demo": "curl http://localhost:4444?Phone=123-456-7890&DisplayName=Kevin%20Hill&Title=IT%20Manager&UserPrincipalName=kevin.hill@fortunabmc.com",
+    "demo": "npx open-cli \"http://localhost:4444?Phone=123-456-7890&DisplayName=Kevin%20Hill&Title=IT%20Manager&UserPrincipalName=kevin.hill@fortunabmc.com\"",
     "pack": "npm run count:src && npm run compress && npm run count:min"
   },
   "dependencies": {
